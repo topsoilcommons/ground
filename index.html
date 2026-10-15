@@ -210,6 +210,7 @@
     h += '<p>Open the provider\u2019s own page: <a href="' + esc(l.source) + '">' + esc(l.source.replace(/^https?:\/\//,"")) + '</a></p>';
     h += '<p>A check takes about a minute: the offer, the place, and the times still match.</p>';
     h += '<p>Then open a pull request in <a href="https://github.com/auroracommons/ground">this repository</a> adding your check to checks.json. When it lands, this listing carries your name and the new date.</p>';
+    h += '<p>On a phone, easier: <a href="https://github.com/auroracommons/ground/issues/new?title=' + encodeURIComponent("Check a listing: " + l.provider) + '">open the check form</a>, fill it in, and your check is answered in the open.</p>';
     h += '</div>';
     h += '</article>';
     return h;
