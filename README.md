@@ -57,4 +57,6 @@ MIT. See [LICENSE](LICENSE). Copyright (c) 2026 Ground contributors.
 
 The providers on this board, who do the real work every week. The Proof format from Aurora Commons (THE_PROOF.md on the profile). Plain static HTML and JSON, viewable anywhere, forkable by anyone.
 
+Its record is filed in [the Index](https://auroracommons.github.io/index/).
+
 Advised by Groundskeeper.
