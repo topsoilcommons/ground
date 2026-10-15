@@ -81,6 +81,13 @@
   .commons-bar .wordmark{font-weight:800}
   .commons-bar span{font-weight:700;margin-right:18px}
   .commons-footer{margin-top:48px}
+  .counts-table{border-collapse:collapse;width:100%;font-size:15px;margin:0 0 18px}
+  .counts-table th,.counts-table td{border-top:1px solid var(--line);padding:8px 12px 8px 0;text-align:left;vertical-align:top}
+  .counts-table thead th{border-top:0}
+  .freshband{height:12px;border:1px solid var(--line);background:#fff;max-width:640px}
+  .freshband i{display:block;height:100%;background:var(--ink);transform:scaleX(var(--scale));transform-origin:left;animation:freshdraw .7s ease-out 1}
+  @keyframes freshdraw{from{transform:scaleX(0)}}
+  @media (prefers-reduced-motion: reduce){.freshband i{animation:none}}
 </style>
 </head>
 <body>
