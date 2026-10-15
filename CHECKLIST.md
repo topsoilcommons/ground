@@ -13,12 +13,13 @@ State as of October 15, 2026. Every line carries its evidence; a line without ev
 - [x] .nojekyll present
 
 ## The extra 10 percent
-- [ ] Repository created on GitHub and publish tree pushed (later step: repo creation and deploy key)
+- [x] Repository created on GitHub and publish tree pushed (deploy key with write access)
 - [ ] CI workflow present and green on GitHub runners
-- [ ] Repo description and topics set
+- [x] Repo description set
+- [ ] Repo topics set
 - [ ] Good first issues open, sized in hours (first candidate: recheck one listing and log the check)
 - [ ] Tagged release v0.1 once CI is green
-- [ ] Live demo answering at https://auroracommons.github.io/ground/
+- [x] Live demo answering at https://auroracommons.github.io/ground/
 
 ## Verification baseline (October 15, 2026)
 - Every listing checked on the provider's own page on October 15, 2026; the checks and their results are in checks.json
