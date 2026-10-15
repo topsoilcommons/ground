@@ -1,0 +1,189 @@
+{
+ "board": "Ground: verified local resources, by place",
+ "verified_on": "2026-10-15",
+ "verifier": "Ground maintainers",
+ "expiry_rule": "Every listing expires 30 days after the date it was verified. A listing past its expiry is shown as stale, never silently.",
+ "seed_board": "New Rochelle and nearby Westchester, in listings.json: 8 listings.",
+ "places": [
+  {
+   "place": "Yonkers, NY",
+   "slug": "yonkers-ny",
+   "file": "places/yonkers-ny.json",
+   "listings": 7,
+   "drops": 7,
+   "categories": {
+    "food": 3,
+    "health": 2,
+    "shelter": 2
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "Mount Vernon, NY",
+   "slug": "mount-vernon-ny",
+   "file": "places/mount-vernon-ny.json",
+   "listings": 8,
+   "drops": 10,
+   "categories": {
+    "health": 3,
+    "food": 5
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "Bronx, NY",
+   "slug": "bronx-ny",
+   "file": "places/bronx-ny.json",
+   "listings": 9,
+   "drops": 7,
+   "categories": {
+    "food": 2,
+    "hygiene": 2,
+    "shelter": 2,
+    "health": 3
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "Harlem, NY",
+   "slug": "harlem-ny",
+   "file": "places/harlem-ny.json",
+   "listings": 7,
+   "drops": 11,
+   "categories": {
+    "food": 4,
+    "health": 2,
+    "shelter": 1
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "Jersey City, NJ",
+   "slug": "jersey-city-nj",
+   "file": "places/jersey-city-nj.json",
+   "listings": 7,
+   "drops": 8,
+   "categories": {
+    "food": 2,
+    "shelter": 2,
+    "hygiene": 1,
+    "health": 2
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "Newark, NJ",
+   "slug": "newark-nj",
+   "file": "places/newark-nj.json",
+   "listings": 7,
+   "drops": 7,
+   "categories": {
+    "food": 3,
+    "shelter": 3,
+    "health": 1
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "Philadelphia, PA",
+   "slug": "philadelphia-pa",
+   "file": "places/philadelphia-pa.json",
+   "listings": 10,
+   "drops": 6,
+   "categories": {
+    "food": 4,
+    "shelter": 3,
+    "health": 1,
+    "hygiene": 2
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "Boston, MA",
+   "slug": "boston-ma",
+   "file": "places/boston-ma.json",
+   "listings": 8,
+   "drops": 8,
+   "categories": {
+    "shelter": 2,
+    "food": 4,
+    "hygiene": 1,
+    "health": 1
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "Chicago, IL",
+   "slug": "chicago-il",
+   "file": "places/chicago-il.json",
+   "listings": 8,
+   "drops": 7,
+   "categories": {
+    "food": 2,
+    "shelter": 1,
+    "hygiene": 3,
+    "health": 2
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "Houston, TX",
+   "slug": "houston-tx",
+   "file": "places/houston-tx.json",
+   "listings": 8,
+   "drops": 7,
+   "categories": {
+    "food": 3,
+    "shelter": 3,
+    "health": 1,
+    "hygiene": 1
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "Los Angeles, CA",
+   "slug": "los-angeles-ca",
+   "file": "places/los-angeles-ca.json",
+   "listings": 8,
+   "drops": 5,
+   "categories": {
+    "food": 2,
+    "shelter": 2,
+    "hygiene": 2,
+    "health": 2
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  },
+  {
+   "place": "London, UK",
+   "slug": "london-uk",
+   "file": "places/london-uk.json",
+   "listings": 8,
+   "drops": 5,
+   "categories": {
+    "food": 3,
+    "health": 1,
+    "hygiene": 3,
+    "charging": 1
+   },
+   "verified_on": "2026-10-15",
+   "expires": "2026-11-14"
+  }
+ ],
+ "totals": {
+  "places": 12,
+  "listings": 95,
+  "drops": 88
+ }
+}
