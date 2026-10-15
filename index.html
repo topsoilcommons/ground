@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ground: verified local help</title>
 <meta name="description" content="A small board of local help in New Rochelle and nearby Westchester. Every listing was checked on the provider's own page, and every listing carries the date it was checked and the date to check again.">
+<meta name="theme-color" content="#fbfaf7">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aurora Commons">
+<meta property="og:title" content="Ground: verified local help">
+<meta property="og:description" content="A small board of local help in New Rochelle and nearby Westchester. Every listing was checked on the provider's own page, and every listing carries the date it was checked and the date to check again.">
+<meta property="og:url" content="https://auroracommons.github.io/ground/">
+<meta property="og:image" content="https://auroracommons.github.io/auroracommons/assets/aurora-logo.png">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1600">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ground: verified local help">
+<meta name="twitter:description" content="A small board of local help in New Rochelle and nearby Westchester. Every listing was checked on the provider's own page, and every listing carries the date it was checked and the date to check again.">
+<meta name="twitter:image" content="https://auroracommons.github.io/auroracommons/assets/aurora-logo.png">
 <style>
   :root{
     --bg:#fbfaf7; --ink:#1b1e23; --soft:#5a6068; --line:#e4e0d6;
@@ -211,6 +226,7 @@
       acts += '<a class="act" href="https://www.google.com/maps/search/?api=1&amp;query=' + encodeURIComponent(l.where) + '" target="_blank" rel="noopener">Get directions</a>';
     }
     acts += '<button type="button" class="act keepbtn" data-keep="' + esc(l.id) + '" aria-expanded="false">Check this listing</button>';
+    acts += '<button type="button" class="act sharebtn" data-share="' + esc(l.id) + '">Share</button>';
     h += '<div class="actions">' + acts + '</div>';
     h += '<div class="keeppanel" id="keep-' + esc(l.id) + '" hidden>';
     h += '<p>Open the provider\u2019s own page: <a href="' + esc(l.source) + '">' + esc(l.source.replace(/^https?:\/\//,"")) + '</a></p>';
@@ -277,6 +293,19 @@
     // counts when it lands in checks.json by pull request, as the panel
     // says. The label change only thanks the person and marks intent.
     b.textContent = "Thank you. Your check keeps this true.";
+  });
+  document.getElementById("board").addEventListener("click", function(e){
+    var b = e.target && e.target.closest ? e.target.closest("[data-share]") : null;
+    if (!b || !boardData) return;
+    var l = null;
+    boardData.listings.forEach(function(x){ if (x.id === b.getAttribute("data-share")) l = x; });
+    if (!l) return;
+    var url = location.href.split("#")[0].split("?")[0];
+    var d = { title: l.provider, text: l.provider + ", " + l.where, url: url };
+    if (navigator.share) { navigator.share(d).catch(function(){}); return; }
+    var old = b.textContent;
+    function done(){ b.textContent = "Link copied"; setTimeout(function(){ b.textContent = old; }, 2000); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(d.text + " " + d.url).then(done, done); }
   });
   fetch("listings.json").then(function(r){ return r.json(); }).then(function(data){
     boardData = data;
