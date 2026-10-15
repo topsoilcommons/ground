@@ -12,11 +12,11 @@ A listing joins the board only after a check on the provider's own published pag
 
 ## Live demo
 
-https://auroracommons.github.io/ground/ (link placeholder until the repository and Pages are enabled)
+https://topsoilcommons.github.io/ground/ (link placeholder until the repository and Pages are enabled)
 
 The page is one static HTML file. It reads listings.json and renders plain cards grouped by category: food, shelter, health, hygiene, and charging. No build step. No external services. No tracking.
 
-The need, in the words of the map: a material floor. Reliable food, a safe place to sleep, a body that is cared for, a life not lived in fear. The full map is [The Ascent](https://github.com/auroracommons/auroracommons/blob/main/NEEDS.md) on the Aurora Commons profile.
+The need, in the words of the map: a material floor. Reliable food, a safe place to sleep, a body that is cared for, a life not lived in fear. The full map is [The Ascent](https://github.com/topsoilcommons/topsoilcommons/blob/main/NEEDS.md) on the Topsoil Commons profile.
 
 ## Proof
 
@@ -47,7 +47,7 @@ A steady stage name is a full identity for credit here, the same as a legal name
 
 ## Contribute
 
-Ways to take part are in [COLLABORATE.md](COLLABORATE.md) and [CONTRIBUTING.md](CONTRIBUTING.md). More ways to take part are in the [Open Table](https://github.com/auroracommons/auroracommons/blob/main/OPEN_TABLE.md) on the profile: one rule, raise the floor beneath everyone, and credit in a public list for checked work.
+Ways to take part are in [COLLABORATE.md](COLLABORATE.md) and [CONTRIBUTING.md](CONTRIBUTING.md). More ways to take part are in the [Open Table](https://github.com/topsoilcommons/topsoilcommons/blob/main/OPEN_TABLE.md) on the profile: one rule, raise the floor beneath everyone, and credit in a public list for checked work.
 
 ## License
 
@@ -55,8 +55,8 @@ MIT. See [LICENSE](LICENSE). Copyright (c) 2026 Ground contributors.
 
 ## Stand on the shoulders of giants
 
-The providers on this board, who do the real work every week. The Proof format from Aurora Commons (THE_PROOF.md on the profile). Plain static HTML and JSON, viewable anywhere, forkable by anyone.
+The providers on this board, who do the real work every week. The Proof format from Topsoil Commons (THE_PROOF.md on the profile). Plain static HTML and JSON, viewable anywhere, forkable by anyone.
 
-Its record is filed in [the Index](https://auroracommons.github.io/index/).
+Its record is filed in [the Index](https://topsoilcommons.github.io/index/).
 
 Advised by Groundskeeper.

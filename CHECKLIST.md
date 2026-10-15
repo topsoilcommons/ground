@@ -19,7 +19,7 @@ State as of October 15, 2026. Every line carries its evidence; a line without ev
 - [ ] Repo topics set
 - [ ] Good first issues open, sized in hours (first candidate: recheck one listing and log the check)
 - [ ] Tagged release v0.1 once CI is green
-- [x] Live demo answering at https://auroracommons.github.io/ground/
+- [x] Live demo answering at https://topsoilcommons.github.io/ground/
 
 ## Verification baseline (October 15, 2026)
 - [x] BASELINE.md created: the Loop, the fundamentals measured on October 15, 2026, the weakest fundamental named (hygiene 0, charging 0), and Cycle 1 recorded as an honest negative with the candidates tried. Every cycle from here is logged in BASELINE.md, newest first
