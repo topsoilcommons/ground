@@ -4,7 +4,7 @@
 
 Aurora Commons addresses the hierarchy of human needs through open source.
 
-The need, in the words of the map: a material floor. Reliable food, a safe place to sleep, a body that is cared for, a life not lived in fear. The full map is [The Ascent](https://github.com/auroracommons/auroracommons/blob/main/NEEDS.md) on the Aurora Commons profile.
+First step: open the live board below, pick one listing, and tap Check this listing. The check takes about a minute.
 
 ## What Ground is
 
@@ -18,6 +18,8 @@ https://auroracommons.github.io/ground/ (link placeholder until the repository a
 
 The page is one static HTML file. It reads listings.json and renders plain cards grouped by category: food, shelter, health, hygiene, and charging. No build step. No external services. No tracking.
 
+The need, in the words of the map: a material floor. Reliable food, a safe place to sleep, a body that is cared for, a life not lived in fear. The full map is [The Ascent](https://github.com/auroracommons/auroracommons/blob/main/NEEDS.md) on the Aurora Commons profile.
+
 ## Proof
 
 State as of October 15, 2026, the day this seed board was built.
@@ -28,8 +30,10 @@ State as of October 15, 2026, the day this seed board was built.
 - **Source for each category.** Food: HOPE Community Services (hopecommunityservices.org) and the United Community Center of Westchester (uccenter.org). Shelter: WestCOP (westcop.org), Lifting Up Westchester (liftingupwestchester.org), and United Way of Westchester and Putnam (uwwp.org) for the Hudson Valley 211 helpline. Health: Open Door Care Network (opendoormedical.org).
 - **Hygiene and charging are empty, on purpose.** No listing in those categories could be verified on a provider's own page today, so the sections stand empty on the board rather than filled with unchecked claims.
 - **The expiry rule.** Verified date plus 30 days is the expiry. The page compares today's date to each expiry and marks a passed listing stale. It never hides a listing.
-- **The check log.** checks.json in this repository is the public log of every check: listing, verifier, date, result. The seed checks are credited to the Ground maintainers.
+- **The check log.** [checks.json](checks.json) in this repository is the public log of every check: listing, verifier, date, result. The seed checks are credited to the Ground maintainers.
 - **How this board improves.** The basic counts are checked, the weakest count is named, and one checked change is made at a time. [BASELINE.md](BASELINE.md) holds the numbers and the open log of cycles.
+
+Other places are recorded in [PLACES.md](PLACES.md), which explains each place file in places/ in the same shapes as the board above.
 
 ## Verify a listing
 
