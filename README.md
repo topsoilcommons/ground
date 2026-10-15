@@ -2,8 +2,6 @@
 
 **Layer 0 of the Ascent: the body.** Food, shelter, health, safety.
 
-Aurora Commons addresses the hierarchy of human needs through open source.
-
 First step: open the live board below, pick one listing, and tap Check this listing. The check takes about a minute.
 
 ## What Ground is
