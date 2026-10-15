@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ground: verified local help</title>
+<meta name="description" content="A small board of local help in New Rochelle and nearby Westchester. Every listing was checked on the provider's own page, and every listing carries the date it was checked and the date to check again.">
+<style>
+  :root{
+    --bg:#fbfaf7; --ink:#1b1e23; --soft:#5a6068; --line:#e4e0d6;
+    --card:#ffffff; --accent:#2e5d43; --accent-ink:#ffffff;
+    --chip:#eef3f0; --warn:#8a5a13; --warnbg:#fdf3e0;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  header{padding:52px 0 4px;text-align:center}
+  h1{font-size:46px;letter-spacing:-1.2px;margin:10px 0 8px;font-weight:800}
+  .tag{font-size:18px;color:var(--soft);max-width:620px;margin:0 auto}
+  .rulebox{max-width:680px;margin:26px auto 0;background:var(--chip);
+    border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:15px;text-align:left}
+  section{padding:38px 0 4px}
+  h2{font-size:24px;letter-spacing:-.5px;margin:0 0 4px}
+  .sub{color:var(--soft);margin:0 0 18px;font-size:15px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .card h3{margin:0 0 4px;font-size:18px}
+  .offer{font-size:15px;margin:0 0 10px}
+  .meta{font-size:14px;color:#33373d;margin:0 0 4px}
+  .meta strong{color:var(--ink)}
+  .dates{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+  .pill{display:inline-block;background:var(--chip);border:1px solid var(--line);
+    border-radius:999px;padding:4px 11px;font-size:13px;font-weight:600;color:var(--accent)}
+  .pill.by{color:var(--ink);font-weight:500}
+  .card.stale{border-color:var(--warn);background:var(--warnbg)}
+  .stalebadge{display:inline-block;background:var(--warn);color:#fff;border-radius:6px;
+    padding:2px 9px;font-size:12.5px;font-weight:700;margin-bottom:8px}
+  .src{font-size:13.5px;margin-top:10px}
+  a{color:var(--accent);font-weight:600}
+  .empty{border:1px dashed var(--line);border-radius:14px;padding:18px;color:var(--soft);font-size:15px}
+  .proofbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;max-width:680px}
+  .proofbox dl{margin:0;display:grid;grid-template-columns:110px 1fr;gap:6px 14px;font-size:14.5px}
+  .proofbox dt{font-weight:700;color:var(--accent)}
+  .proofbox dd{margin:0}
+  footer{padding:48px 0 58px;margin-top:40px;border-top:1px solid var(--line);
+    color:var(--soft);font-size:14px;text-align:center}
+  footer a{color:var(--accent);text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <svg width="72" height="44" viewBox="0 0 72 44" aria-hidden="true">
+    <path d="M10 40 A26 26 0 0 1 62 40" fill="none" stroke="#e8a33d" stroke-width="5" stroke-linecap="round"/>
+    <line x1="2" y1="40" x2="70" y2="40" stroke="#2e5d43" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <h1>Ground</h1>
+  <p class="tag">Local help, checked by hand. Food, shelter, and health care in New Rochelle and nearby Westchester.</p>
+  <div class="rulebox">
+    <strong>The rule.</strong> A listing appears here only after a person checks it on the provider's own page.
+    Every listing shows who checked it, the date, and the date to check again, 30 days later.
+    A listing that passes that date is shown as <strong>stale</strong>, never silently.
+    If a listing is wrong, the fix happens in the open, in this repository.
+  </div>
+</header>
+
+<main id="board">
+  <noscript><p>This board loads its listings from listings.json in this repository. Turn on JavaScript, or read listings.json directly.</p></noscript>
+</main>
+
+<section>
+  <h2>One listing, as a full Proof</h2>
+  <p class="sub">Every listing on this board is a Proof: a claim, the ground it stands on, the hand that checked it, and its check date.</p>
+  <div class="proofbox">
+    <dl>
+      <dt>Claim</dt><dd>HOPE Community Services runs a food pantry at 50 Washington Avenue, New Rochelle, open every Wednesday, 9:00 a.m. to 12:00 noon and 2:00 p.m. to 4:00 p.m., with registration offered at the distributions.</dd>
+      <dt>Ground</dt><dd>The provider's own page: <a href="https://www.hopecommunityservices.org/">hopecommunityservices.org</a></dd>
+      <dt>Hand</dt><dd>Ground maintainers</dd>
+      <dt>Check</dt><dd>Verified October 15, 2026. Check again after November 14, 2026.</dd>
+      <dt>Record</dt><dd>Listing hope-food-pantry in listings.json, and the check is logged in checks.json.</dd>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <h2>Verify a listing</h2>
+  <p class="sub">This is the fastest way in. Pick one listing. Open the provider page it links to. Check that the offer, place, and times still match. Then open a pull request that adds your check to checks.json, with your name or handle and today's date. When it lands, the listing carries your name and the new date, and the board stays alive because of your minutes. The full steps are in the README of this repository.</p>
+</section>
+
+<footer>
+  <p>Ground is part of <a href="https://github.com/auroracommons">Aurora Commons</a>. It serves Layer 0 of the Ascent: the body.</p>
+  <p>Listings are information, checked on the dates shown. Call ahead when you can.</p>
+</footer>
+
+</div>
+<script>
+  var CATS = [
+    ["food", "Food"],
+    ["shelter", "Shelter and housing help"],
+    ["health", "Health"],
+    ["hygiene", "Hygiene"],
+    ["charging", "Charging and warming or cooling space"]
+  ];
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  function todayISO(){
+    var d = new Date();
+    var m = String(d.getMonth()+1).padStart(2,"0");
+    var day = String(d.getDate()).padStart(2,"0");
+    return d.getFullYear() + "-" + m + "-" + day;
+  }
+  function pretty(iso){
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var p = iso.split("-");
+    return months[parseInt(p[1],10)-1] + " " + parseInt(p[2],10) + ", " + p[0];
+  }
+  function card(l, now){
+    var stale = now > l.expires;
+    var h = '<article class="card' + (stale ? ' stale' : '') + '">';
+    if (stale) h += '<span class="stalebadge">Stale: check again</span>';
+    h += '<h3>' + esc(l.provider) + '</h3>';
+    h += '<p class="offer">' + esc(l.offer) + '</p>';
+    h += '<p class="meta"><strong>Where:</strong> ' + esc(l.where) + '</p>';
+    h += '<p class="meta"><strong>When:</strong> ' + esc(l.when) + '</p>';
+    h += '<div class="dates">';
+    h += '<span class="pill">Verified ' + pretty(l.verified) + '</span>';
+    h += '<span class="pill">Check again after ' + pretty(l.expires) + '</span>';
+    h += '<span class="pill by">Verified by ' + esc(l.verified_by) + ', ' + pretty(l.verified) + '</span>';
+    h += '</div>';
+    h += '<p class="src">Source: <a href="' + esc(l.source) + '">' + esc(l.source.replace(/^https?:\/\//,"")) + '</a></p>';
+    h += '</article>';
+    return h;
+  }
+  fetch("listings.json").then(function(r){ return r.json(); }).then(function(data){
+    var now = todayISO();
+    var main = document.getElementById("board");
+    var html = "";
+    CATS.forEach(function(c){
+      var items = data.listings.filter(function(l){ return l.category === c[0]; });
+      html += '<section><h2>' + c[1] + '</h2>';
+      if (items.length === 0) {
+        html += '<div class="empty">No verified listing yet. A listing joins this section only after a check on the provider\u2019s own page. See Verify a listing below.</div>';
+      } else {
+        html += '<div class="cards">' + items.map(function(l){ return card(l, now); }).join("") + '</div>';
+      }
+      html += '</section>';
+    });
+    main.innerHTML = html;
+  }).catch(function(){
+    document.getElementById("board").innerHTML = '<section><p>The listings file could not be loaded. The data lives in listings.json in this repository.</p></section>';
+  });
+</script>
+</body>
+</html>
