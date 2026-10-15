@@ -89,7 +89,7 @@
   <div class="rulebox">
     <strong>The rule.</strong> A listing appears here only after a person checks it on the provider's own page.
     Every listing shows who checked it, the date, and the date to check again, 30 days later.
-    A listing that passes that date is shown as <strong>stale</strong>, never silently.
+    A listing that passes that date is marked <strong>stale</strong> and stays on the board.
     If a listing is wrong, the fix happens in the open, in this repository.
   </div>
 </header>
@@ -110,7 +110,7 @@
 
 <section>
   <h2>One listing, as a full Proof</h2>
-  <p class="sub">Every listing on this board is a Proof: a claim, the ground it stands on, the hand that checked it, and its check date.</p>
+  <p class="sub">Every listing on this board is a Proof. A Proof states what is offered, links to the provider page it came from, names who checked it, and gives the date they checked it.</p>
   <div class="proofbox">
     <dl>
       <dt>Claim</dt><dd>HOPE Community Services runs a food pantry at 50 Washington Avenue, New Rochelle, open every Wednesday, 9:00 a.m. to 12:00 noon and 2:00 p.m. to 4:00 p.m., with registration offered at the distributions.</dd>
@@ -124,7 +124,7 @@
 
 <section>
   <h2>Verify a listing</h2>
-  <p class="sub">This is the fastest way in. Pick one listing. Open the provider page it links to. Check that the offer, place, and times still match. Then open a pull request that adds your check to checks.json, with your name or handle and today's date. When it lands, the listing carries your name and the new date, and the board stays alive because of your minutes. The full steps are in the README of this repository.</p>
+  <p class="sub">You can help in a few minutes. Pick one listing. Open the provider page it links to. Check that the offer, place, and times still match. Then open a pull request that adds your check to checks.json, with your name or handle and today's date. When your pull request is accepted, the listing shows your name and the new date. Your check keeps the board up to date. The full steps are in the README of this repository.</p>
 </section>
 
 <p>The layer above: <a href="https://auroracommons.github.io/still/">Still, the mind at peace</a></p>
@@ -205,12 +205,12 @@
     if (/^\d+\s/.test(l.where.trim())) {
       acts += '<a class="act" href="https://www.google.com/maps/search/?api=1&amp;query=' + encodeURIComponent(l.where) + '" target="_blank" rel="noopener">Get directions</a>';
     }
-    acts += '<button type="button" class="act keepbtn" data-keep="' + esc(l.id) + '" aria-expanded="false">Keep this listing alive</button>';
+    acts += '<button type="button" class="act keepbtn" data-keep="' + esc(l.id) + '" aria-expanded="false">Check this listing</button>';
     h += '<div class="actions">' + acts + '</div>';
     h += '<div class="keeppanel" id="keep-' + esc(l.id) + '" hidden>';
     h += '<p>Open the provider\u2019s own page: <a href="' + esc(l.source) + '">' + esc(l.source.replace(/^https?:\/\//,"")) + '</a></p>';
     h += '<p>A check takes about a minute: the offer, the place, and the times still match.</p>';
-    h += '<p>Then open a pull request in <a href="https://github.com/auroracommons/ground">this repository</a> adding your check to checks.json. When it lands, this listing carries your name and the new date.</p>';
+    h += '<p>Then open a pull request in <a href="https://github.com/auroracommons/ground">this repository</a> adding your check to checks.json. When your pull request is accepted, this listing shows your name and the new date.</p>';
     h += '<p>On a phone, easier: <a href="https://github.com/auroracommons/ground/issues/new?title=' + encodeURIComponent("Check a listing: " + l.provider) + '">open the check form</a>, fill it in, and your check is answered in the open.</p>';
     h += '</div>';
     h += '</article>';
