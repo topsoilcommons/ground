@@ -43,7 +43,7 @@ A steady stage name is a full identity for credit here, the same as a legal name
 
 ## Contribute
 
-Ways in are in [COLLABORATE.md](COLLABORATE.md) and [CONTRIBUTING.md](CONTRIBUTING.md). The wider table is the [Open Table](https://github.com/auroracommons/auroracommons/blob/main/OPEN_TABLE.md) on the profile: one rule, be fair to others, and credit in the public ledger for verified work.
+Ways in are in [COLLABORATE.md](COLLABORATE.md) and [CONTRIBUTING.md](CONTRIBUTING.md). The wider table is the [Open Table](https://github.com/auroracommons/auroracommons/blob/main/OPEN_TABLE.md) on the profile: one rule, raise the floor beneath everyone, and credit in the public ledger for verified work.
 
 ## License
 
