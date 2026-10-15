@@ -80,7 +80,7 @@ def main():
   <p class="sub">Key: the band runs from the check date, %s, to the recheck date, %s. The filled part is the share of that span that has passed by today, %s. One unit is one day of the %d day span.</p>
 </section>
 %s""" % (BEGIN, total, len(rows), fmt_date(verified), fmt_date(verified),
-         fmt_date(expires), place_rows, cat_rows, elapsed, span,
+         fmt_date(expires), place_rows, cat_rows, elapsed, span, fraction,
          fmt_date(verified), fmt_date(expires), fmt_date(today.isoformat()),
          span, END)
 
