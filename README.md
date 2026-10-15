@@ -27,6 +27,7 @@ State as of October 15, 2026, the day this seed board was built.
 - **Hygiene and charging are empty, on purpose.** No listing in those categories could be verified on a provider's own page today, so the sections stand empty on the board rather than filled with unchecked claims.
 - **The expiry rule.** Verified date plus 30 days is the expiry. The page compares today's date to each expiry and marks a passed listing stale. It never hides one silently.
 - **The check log.** checks.json in this repository is the public log of every check: listing, verifier, date, result. The seed checks are credited to the Ground maintainers.
+- **How this board improves.** It runs the Loop: measured fundamentals, the weakest one named, one verified change at a time. [BASELINE.md](BASELINE.md) holds the numbers and the open log of cycles.
 
 ## Verify a listing
 

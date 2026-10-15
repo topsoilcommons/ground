@@ -22,6 +22,7 @@ State as of October 15, 2026. Every line carries its evidence; a line without ev
 - [x] Live demo answering at https://auroracommons.github.io/ground/
 
 ## Verification baseline (October 15, 2026)
+- [x] BASELINE.md created: the Loop, the fundamentals measured on October 15, 2026, the weakest fundamental named (hygiene 0, charging 0), and Cycle 1 recorded as an honest negative with the candidates tried. Every cycle from here is logged in BASELINE.md, newest first
 - Every listing checked on the provider's own page on October 15, 2026; the checks and their results are in checks.json
 - Dropped, with reasons, during the same verification pass: 4 candidates (a closed shelter, hours published only in a county PDF, a clinic found only in aggregator data, a charging claim the provider's own pages do not support)
 - Hygiene and charging sections are empty because nothing in them could be verified on a provider's own page
