@@ -2,6 +2,8 @@
 
 **Layer 0 of the Ascent: the body.** Food, shelter, health, safety.
 
+Aurora Commons addresses the hierarchy of human needs through open source.
+
 The need, in the words of the map: a material floor. Reliable food, a safe place to sleep, a body that is cared for, a life not lived in fear. The full map is [The Ascent](https://github.com/auroracommons/auroracommons/blob/main/NEEDS.md) on the Aurora Commons profile.
 
 ## What Ground is
@@ -49,6 +51,8 @@ Ways in are in [COLLABORATE.md](COLLABORATE.md) and [CONTRIBUTING.md](CONTRIBUTI
 
 MIT. See [LICENSE](LICENSE). Copyright (c) 2026 Ground contributors.
 
-## Built on the shoulders of giants
+## Stand on the shoulders of giants
 
 The providers on this board, who do the real work every week. The Proof format from Aurora Commons (THE_PROOF.md on the profile). Plain static HTML and JSON, viewable anywhere, forkable by anyone.
+
+Advised by Groundskeeper.
