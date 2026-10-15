@@ -75,11 +75,17 @@
   footer{padding:48px 0 58px;margin-top:40px;border-top:1px solid var(--line);
     color:var(--soft);font-size:14px;text-align:center}
   footer a{color:var(--accent);text-decoration:none;font-weight:600}
-  .commons-bar{max-width:980px;margin:0 auto;padding:10px 20px 8px;white-space:normal;border-bottom:1px solid var(--line);font-size:14px}
-  .commons-bar a{margin-right:18px;color:var(--ink);text-decoration:none;font-weight:400}
+  .commons-bar{position:sticky;top:0;z-index:10;background:var(--bg);margin:0;padding:0 20px;white-space:normal;border-bottom:1px solid var(--line);font-size:14px;display:flex;flex-wrap:wrap;align-items:stretch}
+  .commons-bar a,.commons-bar span{display:inline-flex;align-items:center;min-height:44px;margin-right:18px}
+  .commons-bar a{color:var(--ink);text-decoration:none;font-weight:400}
   .commons-bar a:hover{text-decoration:underline}
-  .commons-bar .wordmark{font-weight:800}
-  .commons-bar span{font-weight:700;margin-right:18px}
+  .commons-bar .wordmark{font-weight:600}
+  .commons-bar span{font-weight:700}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--bg);color:var(--accent);padding:10px 16px;font-weight:600;z-index:20}
+  .skip:focus{left:0}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  [id]{scroll-margin-top:72px}
+  .note{margin:14px 0 0;font-size:14.5px;color:var(--soft);max-width:620px}
   .commons-footer{margin-top:48px}
   .counts-table{border-collapse:collapse;width:100%;font-size:15px;margin:0 0 18px}
   .counts-table th,.counts-table td{border-top:1px solid var(--line);padding:8px 12px 8px 0;text-align:left;vertical-align:top}
@@ -91,10 +97,11 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#content">Skip to the content</a>
 <nav class="commons-bar" aria-label="Aurora Commons sites">
   <a class="wordmark" href="https://auroracommons.github.io/auroracommons/">Aurora Commons</a>
   <a href="https://auroracommons.github.io/auroracommons/foundations.html">Foundations</a>
-  <span aria-current="page">Ground</span>
+  <span aria-current="page">Ground (you are here)</span>
   <a href="https://auroracommons.github.io/still/">Still</a>
   <a href="https://auroracommons.github.io/atlas/">Atlas</a>
   <a href="https://auroracommons.github.io/cohort/">Cohort</a>
@@ -102,11 +109,12 @@
   <a href="https://auroracommons.github.io/machine/">Machine</a>
   <a href="https://auroracommons.github.io/lumen/">Lumen</a>
 </nav>
-<div class="wrap">
+<div class="wrap" id="content">
 
 <header>
   <h1>Ground</h1>
   <p class="tag">Local help, checked by hand. Food, shelter, and health care in New Rochelle and nearby Westchester.</p>
+  <p class="note">One of the seven tools of Aurora Commons. Ground is Layer 0, the body.</p>
   <p class="firststep">First step: pick one listing below and tap Check this listing. The check takes about a minute.</p>
 </header>
 
@@ -121,7 +129,7 @@
 <p class="countline" id="countline" aria-live="polite"></p>
 
 <main id="board">
-  <noscript><p>This board loads its listings from a data file. Turn on JavaScript to see the cards. Without it, <a href="listings.json">listings.json</a> is the raw list, and each listing in it names the provider page to check in its source field.</p></noscript>
+  <noscript><p>This board loads its listings when the page opens. Turn on JavaScript to see the cards. Without it, <a href="listings.json">the raw list of listings</a> holds every listing, and each listing in it names the provider page it was checked against.</p></noscript>
 </main>
 
   <div class="rulebox">
@@ -131,12 +139,12 @@
     If a listing is wrong, the fix happens in the open, in this repository.
   </div>
 
-<p>Ground in other places is recorded in <a href="https://github.com/auroracommons/ground/blob/main/PLACES.md">PLACES.md in this repository</a>, with each place checked the same way.</p>
+<p>Ground in other places is counted in the table below, and each place was checked the same way.</p>
 
 <!-- counts:begin -->
 <section aria-labelledby="counts-h">
   <h2 id="counts-h">Ground in numbers</h2>
-  <p class="sub">103 listings stand checked across 13 places, counted from listings.json and places/index.json in this repository on October 15, 2026. Every listing was checked on October 15, 2026 and is due a fresh check on November 14, 2026.</p>
+  <p class="sub">103 listings stand checked across 13 places, counted on October 15, 2026. Every listing was checked on October 15, 2026 and is due a fresh check on November 14, 2026.</p>
   <table class="counts-table">
     <thead><tr><th scope="col">Place</th><th scope="col">Listings</th><th scope="col">Checked</th><th scope="col">Check again</th></tr></thead>
     <tbody>
@@ -167,7 +175,7 @@
   </table>
   <p class="sub">How fresh the board is, as one band:</p>
   <div class="freshband" role="img" aria-label="Freshness band: 0 of 30 days passed between the check date and the recheck date."><i style="--scale:0.0000"></i></div>
-  <p class="sub">Key: the band runs from the check date, October 15, 2026, to the recheck date, November 14, 2026. The filled part is the share of that span that has passed by today, October 15, 2026. One unit is one day of the 30 day span.</p>
+  <p class="sub">Key: the band runs from the check date, October 15, 2026, to the recheck date, November 14, 2026. The filled part is the share of that span that has passed by today, October 15, 2026. One unit is one day, and the full span is 30 days.</p>
 </section>
 <!-- counts:end -->
 
@@ -180,23 +188,24 @@
       <dt>Ground</dt><dd>The provider's own page: <a href="https://www.hopecommunityservices.org/">hopecommunityservices.org</a></dd>
       <dt>Hand</dt><dd>Ground maintainers</dd>
       <dt>Check</dt><dd>Verified October 15, 2026. Check again after November 14, 2026.</dd>
-      <dt>Record</dt><dd>Listing hope-food-pantry in listings.json, and the check is logged in checks.json.</dd>
+      <dt>Record</dt><dd>The listing record and the log of its check are named in the builder record at the bottom of this page.</dd>
     </dl>
   </div>
 </section>
 
 <section>
   <h2>Verify a listing</h2>
-  <p class="sub">You can help in a few minutes. Pick one listing and tap Check this listing on its card. That panel gives the steps on this page. The full steps are in the <a href="https://github.com/auroracommons/ground/blob/main/README.md#verify-a-listing">README of this repository</a>.</p>
+  <p class="sub">You can help in a few minutes. Pick one listing and tap Check this listing on its card. That panel gives the steps on this page: open the provider's own page, see that the offer, the place, and the times still match, and record your check with your name and the date. Your check then shows on the listing, with the date to check again, 30 days later.</p>
 </section>
 
-<p>The layer above: <a href="https://auroracommons.github.io/still/">Still, the mind at peace</a></p>
 <p>The research under this layer: <a href="https://auroracommons.github.io/auroracommons/foundations.html#poverty-and-material-security">Foundations, Poverty and material security</a></p>
 <p>Unlocks the ability to act at all.</p>
 
 <footer>
   <p>Ground is part of <a href="https://github.com/auroracommons">Aurora Commons</a>. It serves Layer 0 of the Ascent: the body.</p>
   <p>Listings are information, checked on the dates shown. Call ahead when you can.</p>
+  <p><a href="https://auroracommons.github.io/auroracommons/">Back to the home page</a></p>
+  <p>Above this layer: <a href="https://auroracommons.github.io/still/">Still, the mind at peace</a></p>
 </footer>
 
 <footer class="commons-footer">
@@ -206,6 +215,17 @@
   <p>Advised by Groundskeeper.</p>
   <p><a href="https://www.linkedin.com/company/aurora-commons-io/">Aurora Commons on LinkedIn</a></p>
 </footer>
+
+<section aria-labelledby="tech-h">
+  <h2 id="tech-h">For agents and builders</h2>
+  <p class="sub">The record behind the counts and the checks on this page.</p>
+  <!-- counts-tech:begin -->
+<h3>How the counts and the checks are recorded</h3>
+<p>Generated by tools/build_counts.py. The counts come from listings.json for the board on this page and places/index.json for the other places, both in this repository. Nothing in the counts section is typed by hand.</p>
+<p>Each listing in listings.json carries its provider page in its source field, the date it was checked in its verified field, and the date to check again in its expires field, 30 days after the check. The public log of checks is checks.json in this repository: a check adds a row with the checker's name, stage name, or handle, and the new verified and expires dates. Full places record: PLACES.md in this repository. Full steps for checking a listing: the README of this repository, under Verify a listing.</p>
+<p>The sample Proof on this page is the listing with the record name hope-food-pantry in listings.json, and its check is logged in checks.json.</p>
+<!-- counts-tech:end -->
+</section>
 
 </div>
 <script>
@@ -274,7 +294,7 @@
     h += '<div class="keeppanel" id="keep-' + esc(l.id) + '" hidden>';
     h += '<p>Open the provider\u2019s own page: <a href="' + esc(l.source) + '">' + esc(l.source.replace(/^https?:\/\//,"")) + '</a></p>';
     h += '<p>A check takes about a minute: the offer, the place, and the times still match.</p>';
-    h += '<p>Then open a pull request in <a href="https://github.com/auroracommons/ground">this repository</a> adding your check to checks.json. When your pull request is accepted, this listing shows your name and the new date.</p>';
+    h += '<p>Then open a pull request in <a href="https://github.com/auroracommons/ground">this repository</a> adding your check to the public check log. When your pull request is accepted, this listing shows your name and the new date.</p>';
     h += '<p>On a phone, easier: <a href="https://github.com/auroracommons/ground/issues/new?title=' + encodeURIComponent("Check a listing: " + l.provider) + '">open the check form</a>, fill it in, and your check is answered in the open.</p>';
     h += '</div>';
     h += '</article>';
@@ -333,8 +353,8 @@
     if (opening) { panel.removeAttribute("hidden"); } else { panel.setAttribute("hidden", ""); }
     b.setAttribute("aria-expanded", opening ? "true" : "false");
     // Honest by design: this button records nothing by itself. The check
-    // counts when it lands in checks.json by pull request, as the panel
-    // says. The label change only thanks the person and marks intent.
+    // counts when it lands in the public check log by pull request, as
+    // the panel says. The label change only thanks the person and marks intent.
     b.textContent = "Thank you. Your check keeps this true.";
   });
   document.getElementById("board").addEventListener("click", function(e){
@@ -354,7 +374,7 @@
     boardData = data;
     render();
   }).catch(function(){
-    document.getElementById("board").innerHTML = '<section><p>The listings file could not be loaded. <a href="listings.json">Open listings.json</a>, the raw list of listings, or load this page again.</p></section>';
+    document.getElementById("board").innerHTML = '<section><p>The listings could not be loaded. <a href="listings.json">Open the raw list of listings</a>, or load this page again.</p></section>';
   });
 </script>
 </body>
