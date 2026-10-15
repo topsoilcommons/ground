@@ -34,10 +34,22 @@
   .pill{display:inline-block;background:var(--chip);border:1px solid var(--line);
     border-radius:999px;padding:4px 11px;font-size:13px;font-weight:600;color:var(--accent)}
   .pill.by{color:var(--ink);font-weight:500}
-  .card.stale{border-color:var(--warn);background:var(--warnbg)}
+  .card.stale{border-color:var(--warn);background:var(--warnbg);opacity:.62}
   .stalebadge{display:inline-block;background:var(--warn);color:#fff;border-radius:6px;
     padding:2px 9px;font-size:12.5px;font-weight:700;margin-bottom:8px}
   .src{font-size:13.5px;margin-top:10px}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:28px 0 0}
+  .fchip{border:1px solid var(--accent);color:var(--accent);background:#fff;border-radius:999px;
+    padding:7px 16px;font-family:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
+  .fchip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+  .countline{text-align:center;color:var(--soft);font-size:15px;margin:12px 0 0;min-height:22px}
+  .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .act{display:inline-block;text-decoration:none;font-size:13.5px;font-weight:600;
+    padding:7px 13px;border-radius:8px;border:1px solid var(--accent);color:var(--accent);background:#fff}
+  button.act{font-family:inherit;cursor:pointer}
+  .keeppanel{margin-top:10px;background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .keeppanel p{font-size:14px;margin:0 0 8px}
+  .keeppanel p:last-child{margin-bottom:0}
   a{color:var(--accent);font-weight:600}
   .empty{border:1px dashed var(--line);border-radius:14px;padding:18px;color:var(--soft);font-size:15px}
   .proofbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;max-width:680px}
@@ -66,6 +78,16 @@
     If a listing is wrong, the fix happens in the open, in this repository.
   </div>
 </header>
+
+<div class="filters" id="filters" role="group" aria-label="Filter listings by category">
+  <button type="button" class="fchip" data-filter="all" aria-pressed="true">All</button>
+  <button type="button" class="fchip" data-filter="food" aria-pressed="false">Food</button>
+  <button type="button" class="fchip" data-filter="shelter" aria-pressed="false">Shelter</button>
+  <button type="button" class="fchip" data-filter="health" aria-pressed="false">Health</button>
+  <button type="button" class="fchip" data-filter="hygiene" aria-pressed="false">Hygiene</button>
+  <button type="button" class="fchip" data-filter="charging" aria-pressed="false">Charging</button>
+</div>
+<p class="countline" id="countline" aria-live="polite"></p>
 
 <main id="board">
   <noscript><p>This board loads its listings from listings.json in this repository. Turn on JavaScript, or read listings.json directly.</p></noscript>
@@ -116,10 +138,28 @@
     var p = iso.split("-");
     return months[parseInt(p[1],10)-1] + " " + parseInt(p[2],10) + ", " + p[0];
   }
+  function phoneOf(l){
+    // The call link exists only when the listing's own record carries a
+    // phone number in its offer or times text. Nothing is invented here.
+    var text = l.offer + " " + l.when;
+    var m = text.match(/\(?\d{3}\)?[ .-]\d{3}-\d{4}/);
+    if (m) return m[0];
+    if (/\bDial 211\b/.test(text)) return "211";
+    return null;
+  }
+  function telHref(num){
+    var d = num.replace(/\D/g, "");
+    return "tel:" + (d.length === 10 ? "+1" + d : d);
+  }
   function card(l, now){
+    // Stale path: a listing past its expires date renders dimmed with a
+    // "Needs a fresh check" badge. Every current listing expires
+    // 2026-11-14, so none render stale today; this branch runs on the
+    // same comparison the day any expiry passes. To preview it, serve a
+    // copy of listings.json with one expires date moved into the past.
     var stale = now > l.expires;
     var h = '<article class="card' + (stale ? ' stale' : '') + '">';
-    if (stale) h += '<span class="stalebadge">Stale: check again</span>';
+    if (stale) h += '<span class="stalebadge">Needs a fresh check</span>';
     h += '<h3>' + esc(l.provider) + '</h3>';
     h += '<p class="offer">' + esc(l.offer) + '</p>';
     h += '<p class="meta"><strong>Where:</strong> ' + esc(l.where) + '</p>';
@@ -130,15 +170,40 @@
     h += '<span class="pill by">Verified by ' + esc(l.verified_by) + ', ' + pretty(l.verified) + '</span>';
     h += '</div>';
     h += '<p class="src">Source: <a href="' + esc(l.source) + '">' + esc(l.source.replace(/^https?:\/\//,"")) + '</a></p>';
+    var acts = "";
+    var phone = phoneOf(l);
+    if (phone) acts += '<a class="act" href="' + telHref(phone) + '">Call ' + esc(phone) + '</a>';
+    // Directions only when the record carries a street address: the where
+    // text starts with a street number. A town and zip alone is not one.
+    if (/^\d+\s/.test(l.where.trim())) {
+      acts += '<a class="act" href="https://www.google.com/maps/search/?api=1&amp;query=' + encodeURIComponent(l.where) + '" target="_blank" rel="noopener">Get directions</a>';
+    }
+    acts += '<button type="button" class="act keepbtn" data-keep="' + esc(l.id) + '" aria-expanded="false">Keep this listing alive</button>';
+    h += '<div class="actions">' + acts + '</div>';
+    h += '<div class="keeppanel" id="keep-' + esc(l.id) + '" hidden>';
+    h += '<p>Open the provider\u2019s own page: <a href="' + esc(l.source) + '">' + esc(l.source.replace(/^https?:\/\//,"")) + '</a></p>';
+    h += '<p>A check takes about a minute: the offer, the place, and the times still match.</p>';
+    h += '<p>Then open a pull request in <a href="https://github.com/auroracommons/ground">this repository</a> adding your check to checks.json. When it lands, this listing carries your name and the new date.</p>';
+    h += '</div>';
     h += '</article>';
     return h;
   }
-  fetch("listings.json").then(function(r){ return r.json(); }).then(function(data){
+  var boardData = null;
+  var activeFilter = "all";
+  var CHIP_LABEL = { food: "food", shelter: "shelter", health: "health", hygiene: "hygiene", charging: "charging" };
+  function shortDate(iso){
+    var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var p = iso.split("-");
+    return months[parseInt(p[1],10)-1] + " " + parseInt(p[2],10) + ", " + p[0];
+  }
+  function render(){
+    if (!boardData) return;
     var now = todayISO();
     var main = document.getElementById("board");
     var html = "";
     CATS.forEach(function(c){
-      var items = data.listings.filter(function(l){ return l.category === c[0]; });
+      if (activeFilter !== "all" && activeFilter !== c[0]) return;
+      var items = boardData.listings.filter(function(l){ return l.category === c[0]; });
       html += '<section><h2>' + c[1] + '</h2>';
       if (items.length === 0) {
         html += '<div class="empty">No verified listing yet. A listing joins this section only after a check on the provider\u2019s own page. See Verify a listing below.</div>';
@@ -148,6 +213,41 @@
       html += '</section>';
     });
     main.innerHTML = html;
+    var set = activeFilter === "all" ? boardData.listings : boardData.listings.filter(function(l){ return l.category === activeFilter; });
+    var staleCount = set.filter(function(l){ return now > l.expires; }).length;
+    var line;
+    if (set.length === 0) {
+      line = "No " + CHIP_LABEL[activeFilter] + " listings yet. One joins only after a check on the provider\u2019s own page.";
+    } else {
+      line = set.length + " " + (activeFilter === "all" ? "" : CHIP_LABEL[activeFilter] + " ") + (set.length === 1 ? "listing" : "listings") + ", all verified " + shortDate(boardData.verified_on) + ".";
+      if (staleCount > 0) line += " " + staleCount + (staleCount === 1 ? " needs" : " need") + " a fresh check.";
+    }
+    document.getElementById("countline").textContent = line;
+  }
+  document.getElementById("filters").addEventListener("click", function(e){
+    var b = e.target && e.target.closest ? e.target.closest("[data-filter]") : null;
+    if (!b) return;
+    activeFilter = b.getAttribute("data-filter");
+    var chips = document.getElementById("filters").querySelectorAll("[data-filter]");
+    for (var i = 0; i < chips.length; i++) chips[i].setAttribute("aria-pressed", chips[i] === b ? "true" : "false");
+    render();
+  });
+  document.getElementById("board").addEventListener("click", function(e){
+    var b = e.target && e.target.closest ? e.target.closest("[data-keep]") : null;
+    if (!b) return;
+    var panel = document.getElementById("keep-" + b.getAttribute("data-keep"));
+    if (!panel) return;
+    var opening = panel.hasAttribute("hidden");
+    if (opening) { panel.removeAttribute("hidden"); } else { panel.setAttribute("hidden", ""); }
+    b.setAttribute("aria-expanded", opening ? "true" : "false");
+    // Honest by design: this button records nothing by itself. The check
+    // counts when it lands in checks.json by pull request, as the panel
+    // says. The label change only thanks the person and marks intent.
+    b.textContent = "Thank you. Your check keeps this true.";
+  });
+  fetch("listings.json").then(function(r){ return r.json(); }).then(function(data){
+    boardData = data;
+    render();
   }).catch(function(){
     document.getElementById("board").innerHTML = '<section><p>The listings file could not be loaded. The data lives in listings.json in this repository.</p></section>';
   });
