@@ -32,7 +32,7 @@ Baseline re-measured first: 155 listings, charging 2, in 2 of 19 places, 0 past 
 - **Public libraries in Boston, Hartford, New Haven, Stamford, Philadelphia, Chicago, Houston, and Los Angeles.** The pages opened describe WiFi, computers, and device lending. No free public charging offer with a place and times is stated.
 - **Westchester County cooling centers list.** The standing list sits in a county PDF, the pattern this board excludes, and its entries say to call for hours during a heat advisory. Does not count.
 
-Result, re-measured after the change: 156 listings, charging 3 of 156 (1.9 percent), in 3 of 19 places. Harlem stands at 8 listings. Freshness holds at 0 listings past expiry: 103 expire November 14, 2026 and 53 expire November 15, 2026. tools/build_listings.py --check passes at 156 listings, and tools/build_counts.py now writes 156 and charging 3 on the home page. The cycle took about 10 minutes. Charging stays the weakest fundamental: one warming space moved it, and phone charging itself is still verified in only 2 places.
+Result, re-measured after the change: 156 listings, charging 3 of 156 (1.9 percent), in 3 of 19 places. Harlem stands at 8 listings. Freshness holds at 0 listings past expiry: 103 expire November 14, 2026 and 53 expire November 15, 2026. tools/build_listings.py --check passes at 156 listings, and tools/build_counts.py now writes 156 and charging 3 on the home page. The cycle took about 6 minutes. Charging stays the weakest fundamental: one warming space moved it, and phone charging itself is still verified in only 2 places.
 
 ### Cycle 2, October 16, 2026: the board outgrew its own record, and the record is corrected
 
