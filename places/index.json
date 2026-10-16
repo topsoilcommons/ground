@@ -51,9 +51,10 @@
    "place": "Harlem, NY",
    "slug": "harlem-ny",
    "file": "places/harlem-ny.json",
-   "listings": 7,
+   "listings": 8,
    "drops": 11,
    "categories": {
+    "charging": 1,
     "food": 4,
     "health": 2,
     "shelter": 1
@@ -274,7 +275,7 @@
  ],
  "totals": {
   "places": 18,
-  "listings": 147,
+  "listings": 148,
   "drops": 125
  }
 }

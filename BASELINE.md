@@ -6,20 +6,33 @@ The Loop. Ground improves by one measured cycle at a time. (1) Measure the funda
 
 ## Fundamentals, measured October 16, 2026
 
-- **Verified listings: 155.** Food 59, shelter 39, health 34, hygiene 21, charging 2. Counted from listings.json on October 16, 2026.
+- **Verified listings: 156.** Food 59, shelter 39, health 34, hygiene 21, charging 3. Counted from listings.json on October 16, 2026.
 - **Places covered: 19.** New Rochelle and nearby Westchester, Yonkers, Mount Vernon, the Bronx, Harlem, Jersey City, Newark, Philadelphia, Boston, Chicago, Houston, Los Angeles, London, Stamford, Bridgeport, Hartford, New Haven, Paterson, and Hempstead.
-- **Listings with a place, times, and a provider source: 155 of 155 (100 percent each).** Every listing carries its where, its when, and the provider's own page in its source field.
-- **Verification freshness: 0 listings past expiry.** 103 listings checked October 15, 2026, expiring November 14, 2026. 52 listings checked October 16, 2026, expiring November 15, 2026. The oldest check is 1 day old.
-- **Checks logged: 130 entries** in the log inside checks.json, including the drops recorded beside the listings.
-- **Page weight: 124.5 KB.** index.html 25,879 bytes plus listings.json 98,613 bytes (124,492 bytes in all; KB counted at 1,000 bytes). The weight grew because the take away file now holds all 155 listings.
+- **Listings with a place, times, and a provider source: 156 of 156 (100 percent each).** Every listing carries its where, its when, and the provider's own page in its source field.
+- **Verification freshness: 0 listings past expiry.** 103 listings checked October 15, 2026, expiring November 14, 2026. 53 listings checked October 16, 2026, expiring November 15, 2026. The oldest check is 1 day old.
+- **Checks logged: 161 entries** across checks.json and the check logs inside the place files, counted October 16, 2026.
+- **Page weight: 125.2 KB.** index.html 25,982 bytes plus listings.json 99,194 bytes (125,176 bytes in all; KB counted at 1,000 bytes). The weight grew because the take away file now holds all 156 listings.
 - **Taps from page open to a call or directions action: not re-measured this cycle.** Last measured October 15, 2026: 1.
 - **Languages offered: 1.** English.
 
 ## The weakest fundamental
 
-Charging: 2 of 155 listings (1.3 percent), in 2 of 19 places (London and Hartford). Hygiene, empty at the baseline, now stands at 21 after the two waves, so the empty category Cycle 1 attacked is closed. Charging is the category the waves could not fill: PLACES.md records that in 17 places no provider's own page states a free public charging offer. It stays named as the weakest, and each new place wave carries charging as an explicit check.
+Charging: 3 of 156 listings (1.9 percent), in 3 of 19 places (London, Hartford, and Harlem). Hygiene, empty at the baseline, now stands at 21 after the two waves, so the empty category Cycle 1 attacked is closed. Charging is the category the waves could not fill: PLACES.md records that in 17 places no provider's own page states a free public charging offer. Cycle 3 added a warming space in Harlem from the city warming centers page, which counts in this category on this board, but no new phone charging offer verified. It stays named as the weakest, and each new place wave carries charging as an explicit check.
 
 ## Cycles
+
+### Cycle 3, October 16, 2026: one warming space verified in Harlem, charging moves from 2 to 3
+
+Baseline re-measured first: 155 listings, charging 2, in 2 of 19 places, 0 past expiry. The hunt ran on providers' own pages only. Candidates tried:
+
+- **NYC 311 warming centers page, City of New York** (portal.311.nyc.gov). Verified. The page lists warming spaces with addresses and hours. NYC Health + Hospitals/Harlem, 506 Lenox Avenue, New York, NY, is listed as a warming space open 24/7. The page also says warming centers may be activated during periods of extreme cold, and the listing on the board says so in its own words. Added as a charging listing (this board counts warming and cooling space in that category), checked by Groundskeeper on October 16, 2026, expiring November 15, 2026, with the check logged in checks.json and in the Harlem place file.
+- **LinkNYC** (link.nyc). Its own home page states device charging in a power only USB port, free, and that Links stand in all five boroughs. Its Find a Link page is a map with no specific address or hours in the page text, so no single listing could be written from the provider's own page. Does not count.
+- **New Rochelle Public Library and the New York Public Library.** Their own pages describe free WiFi, computers, and device lending or digital help. No charging offer is stated. The same failure as Cycle 1.
+- **Brooklyn Public Library.** Its own press page describes a mobile charging station at an interim Brooklyn Heights location, published in 2016 for a temporary site. Out of date, and Brooklyn is not one of the 19 places. Does not count.
+- **Public libraries in Boston, Hartford, New Haven, Stamford, Philadelphia, Chicago, Houston, and Los Angeles.** The pages opened describe WiFi, computers, and device lending. No free public charging offer with a place and times is stated.
+- **Westchester County cooling centers list.** The standing list sits in a county PDF, the pattern this board excludes, and its entries say to call for hours during a heat advisory. Does not count.
+
+Result, re-measured after the change: 156 listings, charging 3 of 156 (1.9 percent), in 3 of 19 places. Harlem stands at 8 listings. Freshness holds at 0 listings past expiry: 103 expire November 14, 2026 and 53 expire November 15, 2026. tools/build_listings.py --check passes at 156 listings, and tools/build_counts.py now writes 156 and charging 3 on the home page. The cycle took about 10 minutes. Charging stays the weakest fundamental: one warming space moved it, and phone charging itself is still verified in only 2 places.
 
 ### Cycle 2, October 16, 2026: the board outgrew its own record, and the record is corrected
 
