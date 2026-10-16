@@ -179,11 +179,102 @@
    },
    "verified_on": "2026-10-15",
    "expires": "2026-11-14"
+  },
+  {
+   "place": "Stamford, CT",
+   "slug": "stamford-ct",
+   "file": "places/stamford-ct.json",
+   "listings": 9,
+   "drops": 4,
+   "categories": {
+    "food": 3,
+    "hygiene": 1,
+    "shelter": 3,
+    "health": 2
+   },
+   "verified_on": "2026-10-16",
+   "expires": "2026-11-15"
+  },
+  {
+   "place": "Bridgeport, CT",
+   "slug": "bridgeport-ct",
+   "file": "places/bridgeport-ct.json",
+   "listings": 9,
+   "drops": 6,
+   "categories": {
+    "food": 3,
+    "hygiene": 1,
+    "shelter": 3,
+    "health": 2
+   },
+   "verified_on": "2026-10-16",
+   "expires": "2026-11-15"
+  },
+  {
+   "place": "Hartford, CT",
+   "slug": "hartford-ct",
+   "file": "places/hartford-ct.json",
+   "listings": 9,
+   "drops": 7,
+   "categories": {
+    "food": 3,
+    "shelter": 3,
+    "health": 1,
+    "hygiene": 1,
+    "charging": 1
+   },
+   "verified_on": "2026-10-16",
+   "expires": "2026-11-15"
+  },
+  {
+   "place": "New Haven, CT",
+   "slug": "new-haven-ct",
+   "file": "places/new-haven-ct.json",
+   "listings": 8,
+   "drops": 5,
+   "categories": {
+    "food": 3,
+    "shelter": 2,
+    "health": 2,
+    "hygiene": 1
+   },
+   "verified_on": "2026-10-16",
+   "expires": "2026-11-15"
+  },
+  {
+   "place": "Paterson, NJ",
+   "slug": "paterson-nj",
+   "file": "places/paterson-nj.json",
+   "listings": 9,
+   "drops": 6,
+   "categories": {
+    "food": 5,
+    "shelter": 1,
+    "hygiene": 1,
+    "health": 2
+   },
+   "verified_on": "2026-10-16",
+   "expires": "2026-11-15"
+  },
+  {
+   "place": "Hempstead, NY",
+   "slug": "hempstead-ny",
+   "file": "places/hempstead-ny.json",
+   "listings": 8,
+   "drops": 9,
+   "categories": {
+    "food": 2,
+    "hygiene": 1,
+    "shelter": 2,
+    "health": 3
+   },
+   "verified_on": "2026-10-16",
+   "expires": "2026-11-15"
   }
  ],
  "totals": {
-  "places": 12,
-  "listings": 95,
-  "drops": 88
+  "places": 18,
+  "listings": 147,
+  "drops": 125
  }
 }

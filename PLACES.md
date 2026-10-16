@@ -27,6 +27,27 @@ Each place file in places/ holds its listings and its check log in the same shap
 
 **Wave total: 95 verified listings and 88 recorded drops across 12 places.** With the seed board, Ground now holds 103 verified listings in 13 places.
 
+**Wave 2, October 16, 2026.** Six more places, built to the same standard and adopted the same day. Every listing in this wave was verified on October 16, 2026 and expires November 15, 2026. The four places first suggested for this wave that already had boards from wave 1 (Yonkers, Mount Vernon, the Bronx, Jersey City) were swapped for uncovered places in the same metro footprint, so no board duplicates a standing one.
+
+| Place | Listings | Food | Shelter | Health | Hygiene | Charging | Dropped |
+|---|---|---|---|---|---|---|---|
+| Stamford, CT | 9 | 3 | 3 | 2 | 1 | 0 | 4 |
+| Bridgeport, CT | 9 | 3 | 3 | 2 | 1 | 0 | 6 |
+| Hartford, CT | 9 | 3 | 3 | 1 | 1 | 1 | 7 |
+| New Haven, CT | 8 | 3 | 2 | 2 | 1 | 0 | 5 |
+| Paterson, NJ | 9 | 5 | 1 | 2 | 1 | 0 | 6 |
+| Hempstead, NY | 8 | 2 | 2 | 3 | 1 | 0 | 9 |
+
+**Wave 2 total: 52 verified listings and 37 recorded drops across 6 places.** With wave 1 and the seed board, Ground now holds 155 verified listings in 19 places.
+
+The wave 2 honest negatives:
+
+- **Charging is still nearly empty.** One verified charging listing in the six new places, at the Friendship Center in Hartford, whose own page states a charging station. No other provider page opened in this wave states a free public charging offer.
+- **Menstrual supplies are stated as an offer nowhere in this wave.** No provider page opened in the six places offers them. In Stamford they appear on one provider page as welcome donations, not as an offer a visitor can count on, so they were not listed.
+- **Baby supplies verified in exactly one place.** Oasis in Paterson states help for women and children including food, clothing, and baby supplies. WIC programs in Stamford, Paterson, and Hempstead state infant formula and infant cereal for eligible families, and the listings say exactly that.
+- **Domestic violence provision verified in five of the six places:** Stamford, Bridgeport, Hartford, New Haven, and Hempstead. In Paterson no dedicated service made the board: the county center's own page states its site is no longer active, and that is recorded as a drop.
+- **37 drops are part of the record,** including The Safe Center LI in Hempstead, whose own page states its services were discontinued as of March 14, 2025. Closed services surface in the drops, not on the boards.
+
 ## The honest negatives
 
 - **Charging is nearly empty.** Only one charging listing verified in the whole wave, at the 999 Club Gateway in London. In the other eleven places, no provider's own page states a free public phone charging offer. Library and day centre pages describe WiFi, computers, and device lending, not charging. The sections stand empty rather than filled with unchecked claims, the same rule the seed board held.
