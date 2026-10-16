@@ -12,7 +12,7 @@ A listing joins the board only after a check on the provider's own published pag
 
 ## Live demo
 
-https://topsoilcommons.github.io/ground/ (link placeholder until the repository and Pages are enabled)
+https://topsoilcommons.github.io/ground/ (live, verified October 16, 2026)
 
 The page is one static HTML file. It reads listings.json and renders plain cards grouped by category: food, shelter, health, hygiene, and charging. No build step. No external services. No tracking.
 
