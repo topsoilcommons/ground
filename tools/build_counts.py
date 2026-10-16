@@ -61,11 +61,17 @@ def main():
                      place["verified_on"], place["expires"]))
     total = sum(r[1] for r in rows)
 
-    verified = rows[0][2]
-    expires = rows[0][3]
-    start = date.fromisoformat(verified)
+    # Places were checked on different days (one wave per day so far),
+    # so the summary sentence and the freshness band span the full set:
+    # first check to last check, and the last recheck date of any place.
+    # An earlier version of this tool used only the seed board's dates
+    # for every place, which misstated the later waves.
+    first_verified = min(r[2] for r in rows)
+    verified = max(r[2] for r in rows)
+    expires = max(r[3] for r in rows)
+    start = date.fromisoformat(first_verified)
     end = date.fromisoformat(expires)
-    today = start
+    today = date.fromisoformat(verified)
     span = (end - start).days
     elapsed = min(max((today - start).days, 0), span)
     fraction = (elapsed / span) if span else 0
@@ -81,7 +87,7 @@ def main():
     section = """%s
 <section aria-labelledby="counts-h">
   <h2 id="counts-h">Ground in numbers</h2>
-  <p class="sub">%d listings stand checked across %d places, counted on %s. Every listing was checked on %s and is due a fresh check on %s.</p>
+  <p class="sub">%d listings stand checked across %d places, counted on %s. Listings were checked between %s and %s. Each listing is due a fresh check 30 days after its own check, the last of them by %s.</p>
   <table class="counts-table">
     <thead><tr><th scope="col">Place</th><th scope="col">Listings</th><th scope="col">Checked</th><th scope="col">Check again</th></tr></thead>
     <tbody>
@@ -96,12 +102,13 @@ def main():
   </table>
   <p class="sub">How fresh the board is, as one band:</p>
   <div class="freshband" role="img" aria-label="Freshness band: %d of %d days passed between the check date and the recheck date."><i style="--scale:%.4f"></i></div>
-  <p class="sub">Key: the band runs from the check date, %s, to the recheck date, %s. The filled part is the share of that span that has passed by today, %s. One unit is one day, and the full span is %d days.</p>
+  <p class="sub">Key: the band runs from the first check date, %s, to the last recheck date, %s. The filled part is the share of that span that has passed by the last check date, %s. One unit is one day, and the full span is %d days.</p>
 </section>
-%s""" % (BEGIN, total, len(rows), fmt_date(verified), fmt_date(verified),
+%s""" % (BEGIN, total, len(rows), fmt_date(verified),
+         fmt_date(first_verified), fmt_date(verified),
          fmt_date(expires), place_rows, cat_rows, elapsed, span, fraction,
-         fmt_date(verified), fmt_date(expires), fmt_date(today.isoformat()),
-         span, END)
+         fmt_date(first_verified), fmt_date(expires),
+         fmt_date(today.isoformat()), span, END)
 
     tech = """%s
 <h3>How the counts and the checks are recorded</h3>
