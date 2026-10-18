@@ -156,14 +156,14 @@
    "place": "Los Angeles, CA",
    "slug": "los-angeles-ca",
    "file": "places/los-angeles-ca.json",
-   "listings": 9,
+   "listings": 10,
    "drops": 5,
    "categories": {
     "food": 2,
     "shelter": 2,
     "hygiene": 2,
     "health": 2,
-    "charging": 1
+    "charging": 2
    },
    "verified_on": "2026-10-18",
    "expires": "2026-11-17"
@@ -277,7 +277,7 @@
  ],
  "totals": {
   "places": 18,
-  "listings": 151,
+  "listings": 152,
   "drops": 125
  }
 }
