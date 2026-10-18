@@ -15,7 +15,7 @@ Credit is by name, stage name, or anonymously, as you choose. A steady stage nam
 ## Other good first tasks (sized in hours)
 
 - **Report a wrong listing (under an hour).** Open an issue with what is wrong and the provider page that shows it. A documented error is a contribution.
-- **Find a hygiene or charging listing (1 to 2 hours).** Both sections are empty because nothing passed verification yet. Find a provider whose own page states the offer, place, and times, and propose the listing with the page linked.
+- **Find a charging listing (1 to 2 hours).** Charging is the board's thinnest section: 5 of 158 listings, in 4 of 19 places. Find a provider whose own page states the offer, place, and times, and propose the listing with the page linked.
 - **Check the board on a phone (under an hour).** Open the demo on a small screen and file anything that is hard to read or tap.
 
 ## Ground rules
@@ -27,3 +27,11 @@ Credit is by name, stage name, or anonymously, as you choose. A steady stage nam
 ## Pull requests
 
 Keep them small and single purpose. State the evidence in the PR description: the page you checked and what it said. Contributors are named in release notes, by name, stage name, or anonymously, as they choose.
+
+## Ways in, by level
+
+**First hour.** Recheck one listing before it expires, by the method above, or verify a listing the board marks stale. One check, one pull request, your name on the board. No experience with this project is assumed.
+
+**First week.** Work the recheck queue as listings come due, or adopt a category: charging is the thinnest at 5 of 158 listings, and every new verified listing there closes a named gap.
+
+**The deep end.** 103 of the board's 158 listings expire on November 14, 2026, and 53 more the day after. Keeping the board true through that cliff, without lowering the provider page rule, is this project's hardest honest problem. The number to hold is zero listings silently wrong.

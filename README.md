@@ -1,6 +1,8 @@
 # Ground
 
-**Layer 0 of the Ascent: the body.** Food, shelter, health, safety.
+Ground verifies local help listings against each provider's own page, so a person in need lands on a door that is actually open. 158 listings across 19 places stand on the board today, each with a check date and an expiry 30 days later.
+
+Layer 0 of Topsoil Commons: the body. Food, shelter, health, safety.
 
 First step: open the live board below, pick one listing, and tap Check this listing. The check takes about a minute.
 
