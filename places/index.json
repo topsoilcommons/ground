@@ -156,16 +156,17 @@
    "place": "Los Angeles, CA",
    "slug": "los-angeles-ca",
    "file": "places/los-angeles-ca.json",
-   "listings": 8,
+   "listings": 9,
    "drops": 5,
    "categories": {
     "food": 2,
     "shelter": 2,
     "hygiene": 2,
-    "health": 2
+    "health": 2,
+    "charging": 1
    },
-   "verified_on": "2026-10-15",
-   "expires": "2026-11-14"
+   "verified_on": "2026-10-18",
+   "expires": "2026-11-17"
   },
   {
    "place": "London, UK",
@@ -276,7 +277,7 @@
  ],
  "totals": {
   "places": 18,
-  "listings": 150,
+  "listings": 151,
   "drops": 125
  }
 }
