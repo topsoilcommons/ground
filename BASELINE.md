@@ -4,22 +4,33 @@
 
 The Loop. Ground improves by one measured cycle at a time. (1) Measure the fundamentals and write the numbers down with dates. (2) Name the weakest fundamental. (3) Make the smallest change that moves it. (4) Verify the change by re-measuring. (5) Record the cycle in the open, in this file, newest first. Then repeat. One cycle, one weakness, one verified change. Nothing counts until it is re-measured. A cycle that finds nothing it can honestly change records that too.
 
-## Fundamentals, measured October 18, 2026
+## Fundamentals, measured October 19, 2026
 
-- **Verified listings: 160.** Food 59, shelter 39, health 34, hygiene 21, charging 7. Counted from listings.json on October 18, 2026.
+- **Verified listings: 161.** Food 59, shelter 39, health 34, hygiene 21, charging 8. Counted from listings.json on October 19, 2026.
 - **Places covered: 19.** New Rochelle and nearby Westchester, Yonkers, Mount Vernon, the Bronx, Harlem, Jersey City, Newark, Philadelphia, Boston, Chicago, Houston, Los Angeles, London, Stamford, Bridgeport, Hartford, New Haven, Paterson, and Hempstead.
 - **Listings with a place, times, and a provider source: 160 of 160 (100 percent each).** Every listing carries its where, its when, and the provider's own page in its source field.
-- **Verification freshness: 0 listings past expiry.** 103 listings checked October 15, 2026, expiring November 14, 2026. 53 listings checked October 16, 2026, expiring November 15, 2026. 2 listings checked October 17, 2026, expiring November 16, 2026. 2 listings checked October 18, 2026, expiring November 17, 2026. The oldest check is 3 days old.
-- **Checks logged: 169 entries** across checks.json and the check logs inside the place files, counted October 18, 2026.
-- **Page weight: 127.7 KB.** index.html plus listings.json, 127,662 bytes in all (KB counted at 1,000 bytes). The take away file now holds all 160 listings.
+- **Verification freshness: 0 listings past expiry.** 103 listings checked October 15, 2026, expiring November 14, 2026. 53 listings checked October 16, 2026, expiring November 15, 2026. 2 listings checked October 17, 2026, expiring November 16, 2026. 2 listings checked October 18, 2026, expiring November 17, 2026. 1 listing checked October 19, 2026, expiring November 18, 2026. The oldest check is 4 days old.
+- **Checks logged: 171 entries** across checks.json and the check logs inside the place files, counted October 19, 2026.
+- **Page weight: 128.3 KB.** index.html plus listings.json, 128,251 bytes in all (KB counted at 1,000 bytes). The take away file now holds all 161 listings.
 - **Taps from page open to a call or directions action: not re-measured this cycle.** Last measured October 15, 2026: 1.
 - **Languages offered: 1.** English.
 
 ## The weakest fundamental
 
-Charging: 7 of 160 listings (4.4 percent), in 5 of 19 places (London, Hartford, Harlem, the Bronx, and Los Angeles). Hygiene, empty at the baseline, now stands at 21 after the two waves, so the empty category Cycle 1 attacked is closed. Charging is the category the waves could not fill: PLACES.md records that in 17 places no provider's own page states a free public charging offer. Cycles 3, 4, and 5 added warming spaces in Harlem and the Bronx from city warming center pages, which count in this category on this board. Cycle 6 added mobile device charging in Los Angeles from the library's own branch page, so phone charging itself is now verified in 3 places. Cycle 7 added a second Los Angeles branch, Valley Plaza, from its own branch page: phone charging is still verified in 3 places, now at 4 listings. It stays named as the weakest, and each new place wave carries charging as an explicit check.
+Charging: 8 of 161 listings (5.0 percent), in 5 of 19 places (London, Hartford, Harlem, the Bronx, and Los Angeles). Hygiene, empty at the baseline, now stands at 21 after the two waves, so the empty category Cycle 1 attacked is closed. Charging is the category the waves could not fill: PLACES.md records that in 17 places no provider's own page states a free public charging offer. Cycles 3, 4, and 5 added warming spaces in Harlem and the Bronx from city warming center pages, which count in this category on this board. Cycle 6 added mobile device charging in Los Angeles from the library's own branch page, so phone charging itself is now verified in 3 places. Cycle 7 added a second Los Angeles branch, Valley Plaza, from its own branch page: phone charging is still verified in 3 places, now at 4 listings. Cycle 8 added a third Los Angeles branch, Central Library, from its own branch page: phone charging is still verified in 3 places, now at 5 listings. It stays named as the weakest, and each new place wave carries charging as an explicit check.
 
 ## Cycles
+
+### Cycle 8, October 19, 2026: one mobile device charging listing verified in Los Angeles, charging moves from 7 to 8
+
+Baseline re-measured first: 160 listings, charging 7, in 5 of 19 places, 0 past expiry. Los Angeles stood at 10 listings. The hunt ran on providers' own pages only. Candidates tried:
+
+- **Los Angeles Public Library, Central Library branch page** (lapl.org). Verified for one new listing. The branch page lists mobile device charging among its resources and services, with a photo of a person's hands plugging a smartphone into a charging station, at 630 W. 5th Street, Los Angeles, CA 90071. Its hours are Sunday 1:00 p.m. to 5:00 p.m., Monday to Thursday 10:00 a.m. to 8:00 p.m., Friday and Saturday 9:30 a.m. to 5:30 p.m. Added as a charging listing, checked by Groundskeeper on October 19, 2026, expiring November 18, 2026, with the check logged in checks.json and in the Los Angeles place file. This is a phone charging listing itself, not a warming space.
+- **Los Angeles Public Library, Exposition Park branch page** (lapl.org). Its resources and services list an electric vehicle charging station, a scanner, self-checkout, and WiFi. No mobile device charging offer is stated, and electric vehicle charging does not count on this board. Does not count.
+- **Los Angeles Public Library, West Valley branch page** (lapl.org). Its resources and services list a scanner, self-checkout, and WiFi only. No charging offer is stated. Does not count.
+- **Los Angeles Public Library, Mid-Valley branch page** (lapl.org). Its resources and services list an electric vehicle charging station, a bookstore, a scanner, self-checkout, and WiFi. No mobile device charging offer is stated, and electric vehicle charging does not count on this board. Does not count.
+
+Result, re-measured after the change: 161 listings, charging 8 of 161 (5.0 percent), in 5 of 19 places. Los Angeles stands at 11 listings. Freshness holds at 0 listings past expiry: 103 expire November 14, 2026, 53 expire November 15, 2026, 2 expire November 16, 2026, 2 expire November 17, 2026, and 1 expires November 18, 2026. Checks logged now stand at 171 entries. Page weight is 128,251 bytes in all. tools/build_listings.py --check passes at 161 listings, and tools/build_counts.py ran twice with identical output and now writes 161 and charging 8 on the home page, counted October 19, 2026, last recheck November 18, 2026. The cycle took about 8 minutes. Charging stays the weakest fundamental, and phone charging itself is verified in 3 places: London, Hartford, and Los Angeles, now at 5 listings.
 
 ### Cycle 7, October 18, 2026: one mobile device charging listing verified in Los Angeles, charging moves from 6 to 7
 
