@@ -52,16 +52,16 @@
    "place": "Harlem, NY",
    "slug": "harlem-ny",
    "file": "places/harlem-ny.json",
-   "listings": 8,
+   "listings": 9,
    "drops": 11,
    "categories": {
-    "charging": 1,
+    "charging": 2,
     "food": 4,
     "health": 2,
     "shelter": 1
    },
-   "verified_on": "2026-10-15",
-   "expires": "2026-11-14"
+   "verified_on": "2026-10-20",
+   "expires": "2026-11-19"
   },
   {
    "place": "Jersey City, NJ",
@@ -277,7 +277,7 @@
  ],
  "totals": {
   "places": 18,
-  "listings": 153,
+  "listings": 155,
   "drops": 125
  }
 }
