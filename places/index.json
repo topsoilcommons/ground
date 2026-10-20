@@ -36,17 +36,17 @@
    "place": "Bronx, NY",
    "slug": "bronx-ny",
    "file": "places/bronx-ny.json",
-   "listings": 11,
+   "listings": 12,
    "drops": 7,
    "categories": {
     "food": 2,
     "hygiene": 2,
     "shelter": 2,
     "health": 3,
-    "charging": 2
+    "charging": 3
    },
-   "verified_on": "2026-10-17",
-   "expires": "2026-11-16"
+   "verified_on": "2026-10-20",
+   "expires": "2026-11-19"
   },
   {
    "place": "Harlem, NY",
@@ -277,7 +277,7 @@
  ],
  "totals": {
   "places": 18,
-  "listings": 155,
+  "listings": 156,
   "drops": 125
  }
 }
